@@ -1,4 +1,12 @@
-import { LOGO, MENU_ICON, SEARCH_ICON, USER_ICON } from "../utils/constants";
+import {
+  BELL_ICON,
+  LOGO,
+  MENU_ICON,
+  MIC_ICON,
+  PLUS,
+  SEARCH_ICON,
+  USER_ICON,
+} from "../utils/constants";
 
 const Head = () => {
   return (
@@ -18,22 +26,45 @@ const Head = () => {
         <input
           type="text"
           placeholder="Search"
-          className="border border-gray-400 px-4 py-1 w-1/2 rounded-l-full"
+          className="border border-gray-400 px-4 py-1 w-1/2 rounded-l-full "
         />
 
-        <div className="relative group">
-          <button className="h-8 w-10  border border-gray-400 rounded-r-full flex items-center justify-center">
-            <img alt="search" src={SEARCH_ICON} />
+        <div className="relative group ">
+          <button className="h-8 w-10  border border-gray-400 rounded-r-full flex items-center p-2 justify-center bg-gray-200">
+            <img className="" alt="search" src={SEARCH_ICON} />
           </button>
 
           <span className="absolute hidden group-hover:block bg-gray-700 text-white text-xs px-2 py-1 top-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
             Search
           </span>
         </div>
+        <div className="relative group">
+          <button className="h-7 w-7 ">
+            <img className="mx-4 my-1" alt="mic icon" src={MIC_ICON} />
+          </button>
+          <span className="absolute hidden group-hover:block bg-gray-500 text-white text-xs whitespace-nowrap px-2 py-1 left-1/2 ">
+            Search with you voice
+          </span>
+        </div>
       </div>
-      ;
-      <div className="h-8 w-8 cursor-pointer col-span-1">
-        <img alt="user" src={USER_ICON} />
+
+      <div className="flex gap-6">
+        <div className="h-9 cursor-pointer flex ">
+          <img className="font-bold " alt="plus" src={PLUS} />
+          <button> Create</button>
+        </div>
+
+        <div className="h-8 w-7 relative group">
+          <button className="">
+            <img alt="bell" src={BELL_ICON} />
+          </button>
+          <span className="absolute hidden group-hover:block bg-gray-500 text-white text-xs whitespace-nowrap px-2 py-1 left-1">
+            Notifications
+          </span>
+        </div>
+        <div className="h-8 w-8 cursor-pointer col-span-1">
+          <img alt="user" src={USER_ICON} />
+        </div>
       </div>
     </div>
   );
