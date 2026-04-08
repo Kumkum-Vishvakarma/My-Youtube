@@ -73,6 +73,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - Create React App
 - Configured Tailwind CSS
+- Header
+- SideBar
+- useDispatch Hook
+- Created Redux store with appSlice
+- Implemented hamburger menu click event to toggle sidebar visibility using Redux state
 
 ## Components
 
@@ -88,3 +93,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Features
 
 - YouTube Header UI
+- Sidebar UI

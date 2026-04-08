@@ -1,26 +1,41 @@
+import { useDispatch } from "react-redux";
 import {
   BELL_ICON,
-  LOGO,
+  LOGO_ICON,
   MENU_ICON,
   MIC_ICON,
-  PLUS,
+  PLUS_ICON,
   SEARCH_ICON,
   USER_ICON,
 } from "../utils/constants";
+import { toggleMenu } from "../utils/appSlice";
 
 const Head = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHanndler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
-    <div className=" grid grid-flow-col p-2 m-2 items-center">
+    <div className=" grid grid-flow-col p-2 m-2 items-center ">
       <div className="flex gap-4 col-span-1">
         <div className="">
-          <img className="cursor-pointer h-6" alt="menu" src={MENU_ICON} />
+          <img
+            className="cursor-pointer h-6"
+            alt="menu"
+            src={MENU_ICON}
+            onClick={() => toggleMenuHanndler()}
+          />
         </div>
+        <a href="/">
         <div className="relative group">
-          <img className="cursor-pointer h-6 " alt="logo" src={LOGO} />
+          <img className="cursor-pointer h-6 " alt="logo" src={LOGO_ICON} />
           <span className="absolute hidden group-hover:block whitespace-nowrap bg-gray-700 text-white text-xs px-2 py-1 top-8 left-1/2 -translate-x-1/2">
             YouTube Home
           </span>
         </div>
+        </a>
       </div>
       <div className="col-span-10 flex justify-center">
         <input
@@ -50,7 +65,7 @@ const Head = () => {
 
       <div className="flex gap-6">
         <div className="h-9 cursor-pointer flex ">
-          <img className="font-bold " alt="plus" src={PLUS} />
+          <img className="font-bold " alt="plus" src={PLUS_ICON} />
           <button> Create</button>
         </div>
 
