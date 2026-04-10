@@ -42,3 +42,6 @@ export const VIDEO_ICON =
 
 export const DOWNLOAD_ICON =
   "https://static.thenounproject.com/png/361084-200.png";
+
+export const SUBS_ICON =
+  "https://cdn.creazilla.com/icons/3264373/subscriptions-icon-sm.png";

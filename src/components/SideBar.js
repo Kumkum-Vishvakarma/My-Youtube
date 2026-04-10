@@ -6,6 +6,8 @@ import {
   LIKE_ICON,
   PLAYLIST_ICON,
   SHORTS_ICON,
+  SUBS_ICON,
+  USER_ICON,
   VIDEO_ICON,
   WTC_LTR_ICON,
 } from "../utils/constants";
@@ -14,7 +16,27 @@ const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
   //Early return pattern
-  if (!isMenuOpen) return null;
+  if (!isMenuOpen)
+    return (
+      <div className="p-3 cursor-pointer">
+        <ul>
+          <li className="flex flex-col items-center text-[10px]">
+            <img className="h-7" alt="home" src={HOME_ICON} /> Home
+          </li>
+          <li className="flex flex-col items-center text-[10px] mt-7">
+            <img className="h-8" alt="shorts" src={SHORTS_ICON} /> Shorts
+          </li>
+          <li className="flex flex-col items-center text-[10px] mt-7">
+            <img className="h-7" alt="subscription" src={SUBS_ICON} />
+            Subscriptions
+          </li>
+          <li className="flex flex-col items-center text-[10px] mt-7 ">
+            <img className="h-7" alt="user" src={USER_ICON} />
+            You
+          </li>
+        </ul>
+      </div>
+    );
 
   return (
     <div className="p-6 w-52">
