@@ -10,7 +10,7 @@ import {
   USER_ICON,
   VIDEO_ICON,
   WTC_LTR_ICON,
-} from "../utils/constants";
+} from "../utils/iconConstants";
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -39,7 +39,7 @@ const SideBar = () => {
     );
 
   return (
-    <div className="p-6 w-52">
+    <div className="p-6 w-64">
       <ul className="font-medium pb-3 cursor-pointer">
         <li className="flex gap-6 ">
           <img className="h-8" alt="home" src={HOME_ICON} /> Home

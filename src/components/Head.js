@@ -7,7 +7,7 @@ import {
   PLUS_ICON,
   SEARCH_ICON,
   USER_ICON,
-} from "../utils/constants";
+} from "../utils/iconConstants";
 import { toggleMenu } from "../utils/appSlice";
 
 const Head = () => {
@@ -29,12 +29,12 @@ const Head = () => {
           />
         </div>
         <a href="/">
-        <div className="relative group">
-          <img className="cursor-pointer h-6 " alt="logo" src={LOGO_ICON} />
-          <span className="absolute hidden group-hover:block whitespace-nowrap bg-gray-700 text-white text-xs px-2 py-1 top-8 left-1/2 -translate-x-1/2">
-            YouTube Home
-          </span>
-        </div>
+          <div className="relative group">
+            <img className="cursor-pointer h-6 " alt="logo" src={LOGO_ICON} />
+            <span className="absolute hidden group-hover:block whitespace-nowrap bg-gray-700 text-white text-xs px-2 py-1 top-8 left-1/2 -translate-x-1/2">
+              YouTube Home
+            </span>
+          </div>
         </a>
       </div>
       <div className="col-span-10 flex justify-center">
@@ -57,7 +57,7 @@ const Head = () => {
           <button className="h-7 w-7 ">
             <img className="mx-4 my-1" alt="mic icon" src={MIC_ICON} />
           </button>
-          <span className="absolute hidden group-hover:block bg-gray-500 text-white text-xs whitespace-nowrap px-2 py-1 left-1/2 ">
+          <span className="absolute hidden group-hover:block bg-gray-700 text-white text-xs whitespace-nowrap px-2 py-1 left-1/2 ">
             Search with you voice
           </span>
         </div>

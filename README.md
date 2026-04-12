@@ -78,6 +78,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - useDispatch Hook
 - Created Redux store with appSlice
 - Implemented hamburger menu click event to toggle sidebar visibility using Redux state
+- Added Button List
 
 ## Components
 
@@ -89,6 +90,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - ButtonList
 - VideoContainer
 - VideoCard
+- Button
 
 ## Features
 
