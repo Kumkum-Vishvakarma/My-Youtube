@@ -12,15 +12,15 @@ const ButtonList = () => {
     "Blessings",
     "Pop Music",
     "Tourist destinations",
-    "Recently uploaded",
-    "New to you",
   ];
 
   return (
-    <div className="flex gap-3 whitespace-nowrap overflow-x-scroll">
-      {list.map((item) => (
-        <Button key={item} name={item} />
-      ))}
+    <div className="w-full overflow-hidden">
+      <div className="flex overflow-x-auto scrollbar-hide whitespace-nowrap gap-3">
+        {list.map((item) => (
+          <Button key={item} name={item} />
+        ))}
+      </div>
     </div>
   );
 };
