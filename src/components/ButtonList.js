@@ -1,4 +1,5 @@
 import Button from "./Button";
+
 const ButtonList = () => {
   const list = [
     "All",
@@ -15,13 +16,22 @@ const ButtonList = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden">
-      <div className="flex overflow-x-auto scrollbar-hide whitespace-nowrap gap-3">
-        {list.map((item) => (
-          <Button key={item} name={item} />
+    <div className="w-full px-4 py-2">
+      <div
+        className="
+        flex
+        gap-3
+        overflow-x-auto
+        whitespace-nowrap
+        scrollbar-hide
+      "
+      >
+        {list.map((item, index) => (
+          <Button key={item} name={item} active={index === 0} />
         ))}
       </div>
     </div>
   );
 };
+
 export default ButtonList;

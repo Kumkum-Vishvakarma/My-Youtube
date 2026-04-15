@@ -79,20 +79,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Created Redux store with appSlice
 - Implemented hamburger menu click event to toggle sidebar visibility using Redux state
 - Added Button List
+- Added constants file
 
-## Components
+## Features Implemented
 
-- Header
-- Body
-- SideBar
-- MenuItems
-- MainContainer
-- ButtonList
-- VideoContainer
-- VideoCard
-- Button
+### Layout System
 
-## Features
+- Fixed header navigation
+- Collapsible sidebar (Redux-controlled)
+- Responsive video grid layout
+- Dynamic layout shift based on sidebar state
+- Horizontal category button list
 
-- YouTube Header UI
-- Sidebar UI
+### State Management
+
+- Redux store configuration
+- `appSlice` for sidebar toggle
+- `useDispatch` and `useSelector` integration
+
+### Video System
+
+- Fetching videos from YouTube API
+- Dynamic video rendering
+- Responsive video card layout
+- Lazy-loaded thumbnails
+
+### Components
+
+- Header (Search, Menu, Icons)
+- Sidebar (Expanded & Collapsed modes)
+- Button List (Scrollable categories)
+- Video Container (Grid system)
+- Video Cards (Thumbnail + Metadata)

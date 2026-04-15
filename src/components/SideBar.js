@@ -15,79 +15,142 @@ import {
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  //Early return pattern
-  if (!isMenuOpen)
+  // COLLAPSED SIDEBAR
+  if (!isMenuOpen) {
     return (
-      <div className="p-3 cursor-pointer">
-        <ul>
-          <li className="flex flex-col items-center text-[10px]">
-            <img className="h-7" alt="home" src={HOME_ICON} /> Home
+      <div
+        className="
+          fixed top-14 left-0
+          w-20 h-[calc(100vh-56px)]
+          flex flex-col items-center
+          py-3
+          bg-white
+          border-r border-gray-200
+        "
+      >
+        <ul className="space-y-6 text-[10px] text-center">
+          <li className="flex flex-col items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+            <img className="h-6 mb-1" src={HOME_ICON} alt="home" />
+            Home
           </li>
-          <li className="flex flex-col items-center text-[10px] mt-7">
-            <img className="h-8" alt="shorts" src={SHORTS_ICON} /> Shorts
+
+          <li className="flex flex-col items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+            <img className="h-6 mb-1" src={SHORTS_ICON} alt="shorts" />
+            Shorts
           </li>
-          <li className="flex flex-col items-center text-[10px] mt-7">
-            <img className="h-7" alt="subscription" src={SUBS_ICON} />
+
+          <li className="flex flex-col items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+            <img className="h-6 mb-1" src={SUBS_ICON} alt="subscriptions" />
             Subscriptions
           </li>
-          <li className="flex flex-col items-center text-[10px] mt-7 ">
-            <img className="h-7" alt="user" src={USER_ICON} />
+
+          <li className="flex flex-col items-center hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+            <img className="h-6 mb-1" src={USER_ICON} alt="you" />
             You
           </li>
         </ul>
       </div>
     );
+  }
 
+  // EXPANDED SIDEBAR
   return (
-    <div className="p-6 w-64">
-      <ul className="font-medium pb-3 cursor-pointer">
-        <li className="flex gap-6 ">
-          <img className="h-8" alt="home" src={HOME_ICON} /> Home
+    <div
+      className="
+        fixed top-14 left-0
+        w-60 h-[calc(100vh-56px)]
+        overflow-y-auto
+        px-4 py-3 pr-2
+        bg-white
+        border-r border-gray-200
+      "
+    >
+      {/* MAIN MENU */}
+
+      <ul className="space-y-1 font-medium">
+        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+          <img className="h-6" src={HOME_ICON} alt="home" />
+          Home
         </li>
-        <li className="flex gap-6 mt-2">
-          <img className="h-8" alt="shorts" src={SHORTS_ICON} /> Shorts
+
+        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+          <img className="h-6" src={SHORTS_ICON} alt="shorts" />
+          Shorts
+        </li>
+
+        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+          <img className="h-6" src={SUBS_ICON} alt="subscriptions" />
+          Subscriptions
         </li>
       </ul>
-      <hr className="border-t border-gray-400" />
-      <h1 className="font-bold mb-3 mt-2">Subscriptions </h1>
-      <ul className="font-medium cursor-pointer pb-3">
-        <li className="mt-2">BibleProject</li>
-        <li className="mt-2">Yeshu ke geet</li>
-        <li className="mt-2">NEW LIFE JESUS</li>
-        <li className="mt-2">Ankit Sajwan</li>
-        <li className="mt-2">Crazy XYZ</li>
-        <li className="mt-2">MyIndia</li>
+
+      <hr className="my-3" />
+
+      {/* SUBSCRIPTIONS */}
+
+      <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+        Subscriptions
+      </h2>
+
+      <ul className="space-y-1 text-sm">
+        <li className="hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+          BibleProject
+        </li>
+
+        <li className="hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+          Yeshu ke geet
+        </li>
+
+        <li className="hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+          NEW LIFE JESUS
+        </li>
+
+        <li className="hover:bg-gray-100 p-2 rounded-lg cursor-pointer">
+          Ankit Sajwan
+        </li>
       </ul>
-      <hr className="border-t border-gray-400" />
-      <h1 className="font-bold mb-3 mt-3">You</h1>
-      <ul className="font-medium pb-3">
-        <li className="flex gap-6 mt-2">
-          <img className="h-6" alt="history" src={HISTORY_ICON} />
+
+      <hr className="my-3" />
+
+      {/* YOU SECTION */}
+
+      <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+        You
+      </h2>
+
+      <ul className="space-y-1 text-sm">
+        <li className="flex gap-4 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <img className="h-5" src={HISTORY_ICON} alt="history" />
           History
         </li>
-        <li className="flex gap-6 mt-2">
-          <img className="h-6" alt="playlist" src={PLAYLIST_ICON} />
+
+        <li className="flex gap-4 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <img className="h-5" src={PLAYLIST_ICON} alt="playlist" />
           Playlists
         </li>
-        <li className="flex gap-6 mt-2">
-          <img className="h-7" alt="watch" src={WTC_LTR_ICON} />
-          Watch Later
-        </li>
-        <li className="flex gap-6 mt-2">
-          <img className="h-6" alt="like" src={LIKE_ICON} />
+
+        <li className="flex gap-4 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <img className="h-5" src={LIKE_ICON} alt="liked videos" />
           Liked Videos
         </li>
-        <li className="flex gap-6 mt-2">
-          <img className="h-7" alt="video" src={VIDEO_ICON} />
+
+        <li className="flex gap-4 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <img className="h-5" src={VIDEO_ICON} alt="your videos" />
           Your Videos
         </li>
-        <li className="flex gap-6 mt-2">
-          <img className="h-7" alt="video" src={DOWNLOAD_ICON} />
+
+        <li className="flex gap-4 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <img className="h-5" src={WTC_LTR_ICON} alt="watch later" />
+          Watch Later
+        </li>
+
+        <li className="flex gap-4 p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <img className="h-5" src={DOWNLOAD_ICON} alt="downloads" />
           Downloads
         </li>
       </ul>
-      <hr className="border-t border-gray-400" />
     </div>
   );
 };
+
 export default SideBar;
