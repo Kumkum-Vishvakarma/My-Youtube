@@ -80,6 +80,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Implemented hamburger menu click event to toggle sidebar visibility using Redux state
 - Added Button List
 - Added constants file
+- WatchPage
 
 ## Features Implemented
 
@@ -103,6 +104,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Dynamic video rendering
 - Responsive video card layout
 - Lazy-loaded thumbnails
+- Embedded YouTube player
 
 ### Components
 
