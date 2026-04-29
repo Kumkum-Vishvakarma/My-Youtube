@@ -65,9 +65,14 @@ const SideBar = () => {
       "
     >
       <ul className="space-y-1 font-medium">
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <img className="h-6" src={HOME_ICON} alt="home" />
-          <Link> Home</Link>
+        <li>
+          <a
+            href="/"
+            className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
+          >
+            <img className="h-6" src={HOME_ICON} alt="home" />
+            Home
+          </a>
         </li>
 
         <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
