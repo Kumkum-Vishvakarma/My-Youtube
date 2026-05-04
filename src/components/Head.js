@@ -96,7 +96,7 @@ const Head = () => {
                 {suggestions.map((s, index) => (
                   <li
                     key={index}
-                    className=" px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2"
+                    className=" px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
                     onMouseDown={() => setSearchQuery(s)}
                   >
                     🔍 {s}

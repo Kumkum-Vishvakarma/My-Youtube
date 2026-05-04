@@ -11,6 +11,11 @@
 - Added constants file
 - WatchPage
 - Debounced search optimization
+- Fetching video details (snippet + statistics) from YouTube API
+- Displaying:
+  - Title
+  - Channel name
+  - View count
 
 ## Features Implemented
 

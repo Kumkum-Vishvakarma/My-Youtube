@@ -35,7 +35,7 @@ export const WTC_LTR_ICON =
   "https://cdn.creazilla.com/icons/3264833/watch-later-icon-md.png";
 
 export const LIKE_ICON =
-  "https://www.kindpng.com/picc/m/11-114955_transparent-like-icon-png-youtube-like-button-svg.png";
+  "https://cdn-icons-png.flaticon.com/512/215/215502.png";
 
 export const VIDEO_ICON =
   "https://static.thenounproject.com/png/1813969-200.png";
@@ -45,3 +45,6 @@ export const DOWNLOAD_ICON =
 
 export const SUBS_ICON =
   "https://cdn.creazilla.com/icons/3264373/subscriptions-icon-sm.png";
+
+export const DISLIKE_ICON =
+  "https://www.svgrepo.com/show/418246/dislike-down-thumb.svg";
