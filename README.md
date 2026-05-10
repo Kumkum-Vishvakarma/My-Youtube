@@ -12,10 +12,11 @@
 - WatchPage
 - Debounced search optimization
 - Fetching video details (snippet + statistics) from YouTube API
-- Displaying:
-  - Title
-  - Channel name
-  - View count
+  - Displaying:
+    - Title
+    - Channel name
+    - View count
+- VideoResults
 
 ## Features Implemented
 
@@ -41,6 +42,7 @@
 - Responsive video card layout
 - Lazy-loaded thumbnails
 - Embedded YouTube player
+- Search video and display the Results
 
 ### Components
 

@@ -11,10 +11,21 @@ const VideoContainer = () => {
   }, []);
 
   const getVideos = async () => {
-    const data = await fetch(YOUTUBE_VIDEOS_API);
-    const json = await data.json();
-    setVideos(json.items);
+    try {
+      const data = await fetch(YOUTUBE_VIDEOS_API);
+
+      const json = await data.json();
+
+      setVideos(json?.items || []);
+    } catch (error) {
+      console.log(error);
+      setVideos([]);
+    }
   };
+
+  if (!videos || videos.length === 0) {
+    return <h1 className="p-5">Loading...</h1>;
+  }
 
   return (
     <div className="px-6 py-4">
@@ -29,8 +40,8 @@ const VideoContainer = () => {
           gap-6
         "
       >
-        {videos.map((video) => (
-          <Link key={video.id} to={"/watch?v=" + video.id}>
+        {videos?.map((video) => (
+          <Link key={video?.id} to={"/watch?v=" + video?.id}>
             <VideoCards info={video} />
           </Link>
         ))}

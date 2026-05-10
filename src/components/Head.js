@@ -12,6 +12,7 @@ import {
 import { toggleMenu } from "../utils/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { useNavigate } from "react-router-dom";
 
 const Head = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ const Head = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [cache, setCache] = useState({});
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,6 +33,11 @@ const Head = () => {
 
     return () => clearTimeout(timer);
   }, [searchQuery]);
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) return;
+    navigate("/results?search_query=" + searchQuery);
+  };
 
   const getSearchSuggestion = async () => {
     if (cache[searchQuery]) {
@@ -79,13 +87,19 @@ const Head = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleSearch();
+              }}
               onFocus={() => setShowSuggestions(true)}
               onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
               placeholder="Search"
               className="w-full border border-gray-300 px-4 py-2 rounded-l-full focus:outline-none"
             />
 
-            <button className="px-6 border border-gray-300 rounded-r-full bg-gray-100 flex items-center justify-center hover:bg-gray-200">
+            <button
+              onClick={handleSearch}
+              className="px-6 border border-gray-300 rounded-r-full bg-gray-100 flex items-center justify-center hover:bg-gray-200"
+            >
               <img className="h-5" alt="search" src={SEARCH_ICON} />
             </button>
           </div>
@@ -97,7 +111,10 @@ const Head = () => {
                   <li
                     key={index}
                     className=" px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
-                    onMouseDown={() => setSearchQuery(s)}
+                    onMouseDown={() => {
+                      setSearchQuery(s);
+                      navigate("/results?search_query=" + s);
+                    }}
                   >
                     🔍 {s}
                   </li>

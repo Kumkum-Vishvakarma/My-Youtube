@@ -66,13 +66,13 @@ const SideBar = () => {
     >
       <ul className="space-y-1 font-medium">
         <li>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
           >
             <img className="h-6" src={HOME_ICON} alt="home" />
             Home
-          </a>
+          </Link>
         </li>
 
         <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
