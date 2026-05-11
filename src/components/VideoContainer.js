@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import VideoCards from "./VideoCards";
 import { YOUTUBE_VIDEOS_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -23,11 +24,9 @@ const VideoContainer = () => {
     }
   };
 
-  if (!videos || videos.length === 0) {
-    return <h1 className="p-5">Loading...</h1>;
-  }
-
-  return (
+  return !videos || videos.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="px-6 py-4">
       <div
         className="

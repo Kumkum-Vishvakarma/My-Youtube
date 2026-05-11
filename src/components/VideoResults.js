@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 const VideoResults = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -9,6 +10,8 @@ const VideoResults = () => {
   const query = searchParams.get("search_query");
 
   const [videos, setVideos] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSearchResults();
@@ -25,7 +28,7 @@ const VideoResults = () => {
 
       const json = await data.json();
 
-      console.log(json);
+      //console.log(json);
 
       setVideos(json.items || []);
     } catch (error) {
@@ -34,17 +37,17 @@ const VideoResults = () => {
     }
   };
 
-  if (!videos || videos.length === 0) {
-    return <h1>Loading...</h1>;
-  }
-
   const restVideos = videos.slice(1);
 
   return (
     <div className={`p-5 m-5 ${isMenuOpen ? "ml-60" : "ml-20"}`}>
       <div className="grid grid-cols-1 mt-6">
         {restVideos.map((video) => (
-          <div key={video?.id?.videoId} className="flex p-2 rounded-lg">
+          <div
+            onClick={() => navigate("/watch?v=" + video?.id?.videoId)}
+            key={video?.id?.videoId}
+            className="flex p-2 rounded-lg"
+          >
             <img
               className="rounded-lg h-[350px] w-[500px] cursor-pointer"
               src={video?.snippet?.thumbnails?.high?.url}
