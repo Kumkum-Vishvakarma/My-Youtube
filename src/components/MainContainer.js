@@ -9,7 +9,7 @@ const MainContainer = () => {
     <div
       className={`
         pt-14
-        ${isMenuOpen ? "ml-60" : "ml-20"}
+        ${isMenuOpen ? "ml-10 md:ml-60" : "md:ml-20"}
       `}
     >
       <ButtonList />

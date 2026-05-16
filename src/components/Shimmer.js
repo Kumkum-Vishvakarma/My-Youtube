@@ -1,17 +1,20 @@
 const ShimmerCard = () => {
   return (
-    <div className="w-[230px] animate-pulse">
-      {/*Thumbnail*/}
-      <div className="bg-gray-200 h-[120px] rounded-xl"></div>
-      {/*content*/}
-      <div className="flex gap-3 mt-8">
-        {/*Channel avatar*/}
-        <div className="bg-gray-200 h-10 w-10 rounded-full"></div>
+    <div className="w-full animate-pulse">
+      {/* Thumbnail */}
+      <div className="bg-gray-200 aspect-video rounded-xl"></div>
+
+      {/* Content */}
+      <div className="flex gap-3 mt-4">
+        {/* Channel avatar */}
+        <div className="bg-gray-200 h-10 w-10 rounded-full shrink-0"></div>
+
         <div className="flex flex-col gap-2 flex-1">
-          {/*Title*/}
+          {/* Title */}
           <div className="bg-gray-200 h-4 rounded w-[90%]"></div>
-          {/*SubTitle*/}
-          <div className="bg-gray-200 h-4 rounded w-[60%] mb-6"></div>
+
+          {/* Subtitle */}
+          <div className="bg-gray-200 h-4 rounded w-[60%]"></div>
         </div>
       </div>
     </div>
@@ -20,8 +23,8 @@ const ShimmerCard = () => {
 
 const Shimmer = () => {
   return (
-    <div className="flex flex-wrap m-5 gap-5">
-      {Array(50)
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-5">
+      {Array(20)
         .fill("")
         .map((_, number) => (
           <ShimmerCard key={number} />

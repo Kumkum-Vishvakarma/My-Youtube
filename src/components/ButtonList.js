@@ -16,7 +16,7 @@ const ButtonList = () => {
   ];
 
   return (
-    <div className="w-full px-4 py-2">
+    <div className="w-full px-4 py-2 md:pl-0 pl-[30px]">
       <div
         className="
         flex

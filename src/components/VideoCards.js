@@ -5,29 +5,16 @@ const VideoCards = ({ info }) => {
   const { channelTitle, title, thumbnails } = snippet;
 
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer w-full min-w-0">
       <img
-        className="
-          w-full
-          rounded-xl
-          aspect-video
-          object-cover
-          hover:scale-[1.02]
-          transition
-        "
+        className="w-full rounded-xl aspect-video object-cover hover:scale-[1.02] transition"
         alt="thumbnail"
-        src={thumbnails?.medium?.url}
+        src={thumbnails?.high?.url}
         loading="lazy"
       />
 
       <div className="mt-3">
-        <h3
-          className="
-            font-semibold
-            text-sm
-            line-clamp-2
-          "
-        >
+        <h3 className="font-semibold text-sm break-words line-clamp-2">
           {title}
         </h3>
 

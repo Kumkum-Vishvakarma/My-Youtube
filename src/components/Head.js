@@ -66,7 +66,7 @@ const Head = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-14 flex items-center justify-between px-4 border-b border-gray-200 bg-white z-50">
+    <div className="fixed top-0 left-0 right-0 h-14 flex items-center justify-between px-2 md:px-4 border-b border-gray-200 bg-white">
       <div className="flex items-center gap-4">
         <img
           className="cursor-pointer h-6"
@@ -80,8 +80,8 @@ const Head = () => {
         </a>
       </div>
 
-      <div className="flex items-center flex-grow justify-center">
-        <div className="relative w-[40rem] max-w-full">
+      <div className="flex items-center flex-1 justify-center mx-2">
+        <div className="relative w-full max-w-xl">
           <div className="flex">
             <input
               type="text"
@@ -98,14 +98,14 @@ const Head = () => {
 
             <button
               onClick={handleSearch}
-              className="px-6 border border-gray-300 rounded-r-full bg-gray-100 flex items-center justify-center hover:bg-gray-200"
+              className="px-4 md:px-6 border border-gray-300 rounded-r-full bg-gray-100 flex items-center justify-center hover:bg-gray-200"
             >
               <img className="h-5" alt="search" src={SEARCH_ICON} />
             </button>
           </div>
 
           {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute top-12 w-full bg-white shadow-lg rounded-lg border border-gray-200 z-50">
+            <div className="absolute top-12 w-full bg-white shadow-lg rounded-lg border border-gray-200">
               <ul>
                 {suggestions.map((s, index) => (
                   <li
@@ -129,7 +129,7 @@ const Head = () => {
         </button>
       </div>
 
-      <div className="flex items-center gap-6">
+      <div className="md:flex hidden items-center gap-6">
         <button className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-100">
           <img className="h-5" alt="plus" src={PLUS_ICON} />
 
